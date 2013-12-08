@@ -12,6 +12,9 @@ This is configured by using the following framework.
 
 ## Run
 
+* get project  
+  `git clone https://github.com/oyabun-gumi/oyabun.git`
+
 * move oyabun dir
 * get deps
 
