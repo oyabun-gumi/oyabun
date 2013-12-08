@@ -1,0 +1,2 @@
+-define(SESSION_USER_ID, "user_id").
+-define(SESSION_ID, "session_id").

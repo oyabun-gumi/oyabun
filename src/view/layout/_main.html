@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="oyabun">
+
+{% include "layout/_header.html" %}
+
+<body class="navbar-fixed">
+
+{% include "layout/_navbar.html" %}
+
+<div id="main-container" class="main-container">
+    <div class="main-container-inner">
+
+        <div id="sidebar" class="sidebar">
+            {% include "layout/_sidebar.html" %}
+        </div>
+
+        <div id="main-content" class="main-content">
+            <div class="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa-home fa"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="active">{% block title %}{% endblock %}</li>
+                </ul>
+            </div>
+            <div class="page-content">
+                <div class="page-header">
+                  <h1>{% block title %}{% endblock %}</h1>
+                </div>
+                <div class="row">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

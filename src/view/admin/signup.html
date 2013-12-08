@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="oyabun" style="height: 100%;">
+
+{% include "layout/_header.html" %}
+
+<body class="single" style="height: 100%;">
+
+<div id="wrap" style="min-height:100%;height:auto;margin:0 auto -60px;padding:0 0 60px;">
+
+
+    <div class="container" ng-controller="SignupCtrl" style="max-width: 330px;">
+
+        <h1>OYABUN</h1>
+        <div ng-show="loginError" class="alert alert-danger well-sm">[[loginError]]</div>
+
+        <form ng-submit="login()">
+        <div class="panel panel-default" style="margin: 20px auto 0;" >
+          <div class="panel-heading">
+            <h3 class="panel-title">Login</h3>
+          </div>
+
+          <div class="panel-body">
+
+            <input type="text" class="form-control" placeholder="Login id" required autofocus ng-model="userLoginId">
+            <br>
+            <input type="password" class="form-control" placeholder="Password" required ng-model="userPassword">
+            <label class="checkbox">
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+
+            <br>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </div>
+        </div>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+
+</html>

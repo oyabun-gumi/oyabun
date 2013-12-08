@@ -1,0 +1,118 @@
+@charset "utf-8";
+body {
+  background: #fcfcfc;
+}
+/* navigation style
+-------------------------------------------*/
+body.navbar-fixed {
+  padding-top: 50px;
+}
+body.navbar-fixed div.navbar-fixed-top,
+body.navbar-fixed div.navbar-fixed-bottom {
+  position: fixed;
+}
+body.navbar-fixed div.navbar {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  min-height: 50px;
+  background: #3a3a3a;
+}
+body.navbar-fixed .navbar-nav > li > a {
+  background: #2e2e2e;
+}
+body.navbar-fixed .navbar-nav > li > a .badge {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  left: 2px;
+}
+/* sidebar style
+-------------------------------------------*/
+.sidebar {
+  float: left;
+  width: 190px;
+  background-color: #f2f2f2;
+  border-right: 1px solid #ccc;
+}
+.sidebar .nav-list ul.nav-sub-list {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  background: #fcfcfc;
+}
+.sidebar .nav-list li {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #ddd;
+}
+.sidebar .nav-list li a {
+  color: #5a5a5a;
+  display: block;
+  padding: 8px 0 10px 35px;
+  position: relative;
+}
+.sidebar .nav-list li a .fa {
+  font-size: 1.2em;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+}
+.sidebar .nav-list li:last-child {
+  border-bottom: 0;
+}
+.sidebar:before {
+  content: "";
+  display: block;
+  width: 190px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+/* main content
+-------------------------------------------*/
+.main-container-inner {
+  position: relative;
+}
+.main-container-inner .main-content {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 190px;
+  min-height: 100%;
+}
+.main-container-inner .main-content .breadcrumbs {
+  min-height: 40px;
+  line-height: 40px;
+}
+.main-container-inner .main-content .breadcrumbs .breadcrumb {
+  margin: 0;
+}
+.main-container-inner .main-content .page-content {
+  padding: 8px 20px 24px;
+}
+.main-container-inner .main-content .page-content .page-header {
+  margin: 0 0 12px;
+  border-bottom: 1px dotted #e2e2e2;
+  padding-bottom: 16px;
+  padding-top: 7px;
+}
+.main-container-inner .main-content .page-content .page-header h1 {
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0 8px;
+  color: #333333;
+}
+/* Error Page
+-------------------------------------------*/
+body.single {
+  background: #efefef;
+}
+body.single .error-container {
+  text-align: center;
+  color: #666;
+}
