@@ -10,7 +10,7 @@ This is configured by using the following framework.
 
 ---
 
-## Run
+## Run application
 
 * get project  
   `git clone https://github.com/oyabun-gumi/oyabun.git`
@@ -46,3 +46,20 @@ This is configured by using the following framework.
   
 * access page [http://localhost:8001/](http://localhost:8001/)
     * userid / pass = admin /admin
+
+---
+
+## Run grunt task
+
+* **precondition**
+	- install
+		+ node.js
+		+ grunt (npm install -g grunt-cli)
+	- move oyabun dir
+	- run command  
+	`npm install`
+* **run grunt**
+	- compile less & minify css  
+	`grunt gencss`
+	- uglify js  
+	`grunt genjs`
