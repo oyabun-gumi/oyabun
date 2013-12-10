@@ -2,7 +2,7 @@
 
 @bgColor:#fcfcfc;
 
-@navbarHeight: 50px;
+@navbarPadding: 10px;
 @navbarBgColor: #3a3a3a;
 
 @sidebarWidth: 190px;
@@ -22,7 +22,7 @@ body {
 /* navigation style
 -------------------------------------------*/
 body.navbar-fixed {
-    padding-top: @navbarHeight;
+    padding-top: 40px;
     
     div.navbar-fixed-top,
     div.navbar-fixed-bottom {
@@ -30,11 +30,19 @@ body.navbar-fixed {
     }
     div.navbar{
         .resetBox;
-        min-height: @navbarHeight;
         background: @navbarBgColor;
+        button{
+            margin:5px;
+            padding: 3px 10px;
+        }
+    }
+    .navbar-brand{
+       padding-top: @navbarPadding;
+       padding-bottom: @navbarPadding;
     }
    .navbar-nav > li > a{
-       background: (@navbarBgColor * 0.8);
+       padding-top: @navbarPadding;
+       padding-bottom: @navbarPadding;
        .badge{
            padding-left:5px;
            padding-right:5px;
@@ -42,7 +50,12 @@ body.navbar-fixed {
            left:2px;
        }
    }
+   .navbar-nav.navbar-right:last-child{
+        margin-right:0;
+   }
 }
+
+
 
 /* sidebar style
 -------------------------------------------*/

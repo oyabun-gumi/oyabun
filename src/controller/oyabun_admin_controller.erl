@@ -10,16 +10,30 @@
 %% ====================================================================
 %% API functions
 %% ====================================================================
+
+config(lang, DefaultValue, RequestContext) ->
+    boss_session:get_session_data(SessionId, locale);
+config(_,_,_) ->
+    ok.
+
 before_("signup", B, C) ->
+    ok;
+before_("japanese", B, C) ->
+    ok;
+before_("english", B, C) ->
     ok;
 before_(A, B, C) ->
     user_lib:require_login(SessionId).
 
-index('GET', [], User) ->
-    {ok, []}.
+english('GET', [], _) ->
+    boss_session:set_session_data(SessionId, locale, "en"),
+    {redirect, Req:header(referer), [{"Content-Language", boss_session:get_session_data(SessionId, locale)}]}.
+japanese('GET', [], _) ->
+    boss_session:set_session_data(SessionId, locale, "ja"),
+    {redirect, Req:header(referer), [{"Content-Language", boss_session:get_session_data(SessionId, locale)}]}.
 
-signup('GET', [], _) ->
-    {ok, []};
+signup('GET', [], U) ->
+    {ok, [{is_not_login, "true"}]};
 signup('POST', [], _) ->
     Data = request_lib:param(Req:request_body()),
     Password = proplists:get_value(password, Data),

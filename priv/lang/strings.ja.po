@@ -1,0 +1,55 @@
+
+msgid ""
+"login"
+msgstr ""
+"ログイン"
+
+msgid ""
+"English"
+msgstr ""
+"英語"
+
+msgid ""
+"Japanese"
+msgstr ""
+"日本語"
+
+msgid ""
+"Language"
+msgstr ""
+"言語"
+
+msgid ""
+"Logout"
+msgstr ""
+"ログアウト"
+
+msgid ""
+"User Profile"
+msgstr ""
+"ユーザ情報"
+
+msgid ""
+"Admin"
+msgstr ""
+"管理"
+
+msgid ""
+"Login Form"
+msgstr ""
+"ログインフォーム"
+
+msgid ""
+"New User"
+msgstr ""
+"新規ユーザ"
+
+msgid ""
+"Sign in"
+msgstr ""
+"サインイン"
+
+msgid ""
+"User List"
+msgstr ""
+"ユーザ一覧"

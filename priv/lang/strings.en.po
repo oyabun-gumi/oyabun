@@ -1,0 +1,30 @@
+
+msgid ""
+"English"
+msgstr ""
+"English"
+
+msgid ""
+"Japanese"
+msgstr ""
+"Japanese"
+
+msgid ""
+"Language"
+msgstr ""
+"Language"
+
+msgid ""
+"Logout"
+msgstr ""
+"Logout"
+
+msgid ""
+"User Profile"
+msgstr ""
+"User Profile"
+
+msgid ""
+"login"
+msgstr ""
+"login"

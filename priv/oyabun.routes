@@ -18,7 +18,9 @@
  {"/signup", [{controller, "admin"}, {action, "signup"}]}.
  {"/signout", [{controller, "admin"}, {action, "signout"}]}.
  {"/dashboard", [{controller, "admin"}, {action, "dashboard"}]}.
-
+ {"/english", [{controller, "admin"}, {action, "english"}]}.
+ {"/japanese", [{controller, "admin"}, {action, "japanese"}]}.
+ 
 % 404 File Not Found handler
 {404, [{controller, "error"}, {action, "err404"}]}.
 

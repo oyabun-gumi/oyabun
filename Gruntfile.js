@@ -5,17 +5,18 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib');
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         less: {
             gen: {
                 options: { cleancss: true },
-                src: "./src-front/less/oyabun.less",
-                dest: "./src-front/less/oyabun.css"
+                src: "./src-front/less/<%= pkg.name %>.less",
+                dest: "./src-front/less/<%= pkg.name %>.css"
             }
         },
         cssmin:{
             main: {
-                src : ["./src-front/less/oyabun.css"],
-                dest : "./priv/static/oyabun/oyabun.min.css"
+                src : ["./src-front/less/<%= pkg.name %>.css"],
+                dest : "./priv/static/<%= pkg.name %>/<%= pkg.name %>.min.css"
             }
         },
         uglify: {
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
             },
             gen: {
                 files: {
-                    './priv/static/oyabun/oyabun.min.js': ['./src-front/js/app.js']
+                    './priv/static/<%= pkg.name %>/<%= pkg.name %>.min.js': ['./src-front/js/app.js']
                 }
             }
         },

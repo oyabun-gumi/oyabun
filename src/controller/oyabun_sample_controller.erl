@@ -10,6 +10,12 @@
 %% ====================================================================
 %% API functions
 %% ====================================================================
+
+config(lang, DefaultValue, RequestContext) ->
+    boss_session:get_session_data(SessionId, locale);
+config(_,_,_) ->
+    ok.
+
 before_("signup", B, C) ->
     ok;
 before_(A, B, C) ->
