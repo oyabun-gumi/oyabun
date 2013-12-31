@@ -1,14 +1,14 @@
 <ul class="nav nav-list">
     <li><a href="#"><i class="fa fa-wrench" ></i>{% trans "Admin" %}</a>
         <ul class="nav-sub-list">
-            <li><a href="#">{% trans "User Profile" %}</a></li>
-            <li><a href="#">{% trans "User List" %}</a></li>
-            <li><a href="#">{% trans "New User" %}</a></li>
+            <li><a ng-href="/users/view/{}">{% trans "User Profile" %}</a></li>
+            <li><a ng-href="/users/list">{% trans "User List" %}</a></li>
+            <li><a ng-href="/users/edit">{% trans "New User" %}</a></li>
         </ul>
     </li>
-    <li><a href="/sample"><i class="fa fa-wrench" ></i>Samples</a>
+    <li><a ng-href="/sample"><i class="fa fa-wrench" ></i>Samples</a>
         <ul class="nav-sub-list">
-            <li><a href="/sample">Sample1</a></li>
+            <li><a ng-href="/sample">Sample1</a></li>
         </ul>
     </li>
 </ul>

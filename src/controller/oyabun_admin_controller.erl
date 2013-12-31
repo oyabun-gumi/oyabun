@@ -16,21 +16,21 @@ config(lang, DefaultValue, RequestContext) ->
 config(_,_,_) ->
     ok.
 
-before_("signup", B, C) ->
+before_("signup", _, _) ->
     ok;
-before_("japanese", B, C) ->
+before_("lang", _, _) ->
     ok;
-before_("english", B, C) ->
-    ok;
-before_(A, B, C) ->
+before_(_, _, _) ->
     user_lib:require_login(SessionId).
 
-english('GET', [], _) ->
-    boss_session:set_session_data(SessionId, locale, "en"),
+% @doc select language event
+lang('GET', [Lang], _) ->
+    boss_session:set_session_data(SessionId, locale, Lang),
+    lager:info("Req:header(referer)=~p", [Req:header(referer)]),
     {redirect, Req:header(referer), [{"Content-Language", boss_session:get_session_data(SessionId, locale)}]}.
-japanese('GET', [], _) ->
-    boss_session:set_session_data(SessionId, locale, "ja"),
-    {redirect, Req:header(referer), [{"Content-Language", boss_session:get_session_data(SessionId, locale)}]}.
+
+dashboard('GET', [], _) ->
+    {ok, []}.
 
 signup('GET', [], U) ->
     {ok, [{is_not_login, "true"}]};
@@ -47,10 +47,10 @@ signup('POST', [], _) ->
             {json, [{result,"ok"},{data,[{url, "/"}]}]}
     end.
 
-signout('POST', [], _) ->
+signout('GET', [], _) ->
     % delete session
     user_lib:logout(SessionId),
-    {json, [{result,"ok"},{data,[{url, "/"}]}]}.
+    {redirect, "/", []}.
 
 %% ====================================================================
 %% Internal functions

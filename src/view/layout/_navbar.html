@@ -1,23 +1,23 @@
-<div id="navbar" class="navbar navbar-fixed-top" ng-controller="NavibarCtrl">
+<div id="navbar" class="navbar navbar-fixed-top">
     <div class="">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <i style="color:#fff;" class="fa fa-bars"></i>
           </button>
-            <a class="navbar-brand" href="#">OYABUN</a>
+            <a class="navbar-brand" href="/">OYABUN</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{% trans "Language" %} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/japanese">{% trans "Japanese" %}</a></li>
-                        <li><a href="/english">{% trans "English" %}</a></li>
+                        <li><a ng-href="/lang/ja">{% trans "Japanese" %}</a></li>
+                        <li><a ng-href="/lang/en">{% trans "English" %}</a></li>
                     </ul>
                 </li>
                 <li class="item" ng-hide="{{ is_not_login }}">
-                    <a href="#" ng-click="logout()">{% trans "Logout" %}</a>
+                    <a ng-href="/signout">{% trans "Logout" %}</a>
                 </li>
             </ul>
         </div>

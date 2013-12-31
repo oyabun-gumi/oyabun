@@ -9,6 +9,7 @@ oyabunApp.config(["$interpolateProvider",
     }
 ]);
 
+// Signup control
 oyabunApp.controller("SignupCtrl", ["$scope", "$location", "$http",
     function($scope, $location, $http) {
         $scope.login = function() {
@@ -17,31 +18,12 @@ oyabunApp.controller("SignupCtrl", ["$scope", "$location", "$http",
             $http.post("/signup", $scope.loginUser)
             .success(function (res, status, headers, config) {
                 if(res.result == "ok") {
-                    location.href='/dashboard';
+                    location.href='/';
                 }
                 else {
                     $scope.loginError = res.data.message;
                     // reset password
                     $scope.userPassword = "";
-                }
-            })
-            .error(function (res, status, headers, config) {
-                // error message
-            });
-        };
-    }
-]);
-
-oyabunApp.controller("NavibarCtrl", ["$scope", "$location", "$http",
-    function($scope, $location, $http) {
-        $scope.logout = function() {
-            $http.post("/signout")
-            .success(function (res, status, headers, config) {
-                if(res.result == "ok") {
-                    location.href='/';
-                }
-                else {
-                    $scope.loginError = res.data.message;
                 }
             })
             .error(function (res, status, headers, config) {

@@ -18,8 +18,8 @@
  {"/signup", [{controller, "admin"}, {action, "signup"}]}.
  {"/signout", [{controller, "admin"}, {action, "signout"}]}.
  {"/dashboard", [{controller, "admin"}, {action, "dashboard"}]}.
- {"/english", [{controller, "admin"}, {action, "english"}]}.
- {"/japanese", [{controller, "admin"}, {action, "japanese"}]}.
+ {"/lang/([a-z]+)", [{controller, "admin"}, {action, "lang"}, {lang, '$1'}]}.
+% {"/users/([a-z]+)/(\\d?)", {controller, "users"}, {action, '$1'}, {id, '$2'}}.
  
 % 404 File Not Found handler
 {404, [{controller, "error"}, {action, "err404"}]}.
